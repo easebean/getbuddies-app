@@ -19,6 +19,9 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent},
   { path: 'login', component: LoginComponent },
   { path: 'chat', component: ChatsComponent},
+  { path: 'teams', component: DisplayTeamsComponent},
+  { path: 'search', component: SearchTeamsComponent},
+  { path: 'create-team', component: CreateTeamComponent},
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: Error404Component }

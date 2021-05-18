@@ -1,32 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <title>Error 404</title>
-</head>
-<body class="bg-gray-900">
+<div class="bg-gray-900 h-screen">
     <!-- header -->
-        <div class="bg-gray-800 text-gray-200 p-4">
-            <div class="mx-auto text-center">
-                GetBuddies
-            </div>
-        </div>
- 
+    <div class="bg-gray-800 text-gray-200 p-4">
+        <button class="flex mx-auto text-center" routerLink="/home">
+            GetBuddies
+        </button>
+    </div>
+
     <!-- main container -->
-    <div class="w-3/4 h-16 mx-auto">
-        <div class="text-gray-200 text-3xl text-center p-14">
-            <div class="pb-4">
-                404 Error 
+    <div class="h-full flex items-center justify-center mx-auto">
+        <div class="text-gray-200 text-center p-14">
+            <div class="pb-4 text-5xl">
+                404 Error
             </div>
-                <hr>
+            <hr>
             <div class="text-sm py-4">
                 Try reconnecting!
             </div>
         </div>
     </div>
-</body>
-</html>
+</div>
