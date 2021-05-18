@@ -12,6 +12,17 @@ import { SearchTeamsComponent } from './search-teams/search-teams.component';
 import { DisplayTeamsComponent } from './display-teams/display-teams.component';
 import { Error404Component } from './error404/error404.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: 'signup', component: SignUpComponent },
+  { path: 'profile', component: ProfileComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'chat', component: ChatsComponent},
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: Error404Component }
+]
 
 @NgModule({
   declarations: [
@@ -28,7 +39,8 @@ import { CreateTeamComponent } from './create-team/create-team.component';
     CreateTeamComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
