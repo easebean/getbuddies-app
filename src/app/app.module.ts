@@ -13,6 +13,7 @@ import { DisplayTeamsComponent } from './display-teams/display-teams.component';
 import { Error404Component } from './error404/error404.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
@@ -43,6 +44,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

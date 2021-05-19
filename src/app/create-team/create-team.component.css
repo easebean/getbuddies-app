@@ -1,0 +1,44 @@
+.header
+{
+    @apply grid;
+    @apply lg:grid-cols-2;
+    @apply md:grid-cols-2;
+    @apply grid-cols-1;
+    @apply bg-gray-900;
+    @apply text-white;
+}
+
+.input
+{
+    @apply mr-1;
+    @apply lg:mr-8;
+    @apply border-2;
+    @apply border-gray-500;
+    @apply rounded-full;
+    @apply placeholder-opacity-40;
+    @apply text-gray-700;
+    @apply py-1;
+    @apply px-3;
+    @apply border-none;
+}
+
+.input:focus
+{
+    @apply outline-none;
+}
+
+.button
+{
+    @apply bg-gray-800;
+    @apply text-white;
+    @apply font-semibold;
+    @apply px-4;
+    @apply py-1;
+}
+
+.button:hover
+{
+    @apply shadow-lg;
+    @apply bg-gray-50;
+    @apply text-gray-900;
+}

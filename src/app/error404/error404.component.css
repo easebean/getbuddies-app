@@ -1,0 +1,7 @@
+.main{
+    @apply h-full;
+    @apply flex; 
+    @apply items-center; 
+    @apply justify-center;
+    @apply mx-auto;
+}
