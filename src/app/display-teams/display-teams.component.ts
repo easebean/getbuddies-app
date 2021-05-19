@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Room } from 'src/app/Room';
+import { ROOMS } from 'src/app/mock-rooms';
 
 @Component({
   selector: 'app-display-teams',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayTeamsComponent implements OnInit {
 
+  rooms = ROOMS;
+ 
+  
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  onSelect(room: Room):void{
   }
 
 }
