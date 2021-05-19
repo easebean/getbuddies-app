@@ -11,10 +11,10 @@
             <div class="py-6 grid-cols-4 lg:grid-cols-3 grid">
                 <div class="lg:col-span-3 col-span-2">
                     <div class="lg:grid-cols-2 gap-10 sm:col-span-3 md:col-span-2 lg:grid text-sm md:text-base">
-                        <button
+                        <button [routerLink]="'/signup'"
                             class="uppercase w-full bg-white hover:bg-yellow-200 hover:text-gray-800 m-4 text-gray-600 font-bold text-center rounded-full px-4 py-3 ">Join
                             us now</button>
-                        <button
+                        <button [routerLink]="'/login'"
                             class="uppercase w-full bg-white hover:bg-yellow-200 hover:text-gray-800 m-4 text-gray-600 font-bold text-center rounded-full px-4 py-3 ">login</button>
                     </div>
                 </div>
@@ -167,7 +167,7 @@
     </div>
 </div>
 <!-- Footer -->
-<footer class="grid grid-cols-3 py-6 bg-gray-700 text-gray-100">
+<footer class="grid grid-cols-3 py-6 bg-gray-900 text-gray-100">
     <div class="px-4">Icons</div>
     <div class="mx-auto">GetBuddies</div>
     <div class="right-0 absolute pr-8">&copy; 2021</div>

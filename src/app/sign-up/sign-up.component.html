@@ -1,31 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <title>SignUp</title>
-</head>
-
-<body>
-    <!-- header -->
-    <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 bg-gray-800 text-white">
+<!-- header -->
+    <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 bg-gray-900 text-white">
         <div>
-            <button class="hover:bg-gray-700 px-6 py-4">
+            <button [routerLink]="'/home'" class="hover:bg-gray-700 px-6 py-4">
                 <div>
                     <button class="hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
-                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" 
-                        stroke-linejoin="round" class="feather feather-menu">
-                        <line x1="3" y1="12" x2="21" y2="12">
-                        </line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18">
-                        </line>
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
                     </button>
                 </div>
             </button>
@@ -42,19 +22,19 @@
                 <!-- heading SignUp -->
                 <div class="flex text-base p-4">
                     <div class="mx-auto">
-                        <button
-                            class="text-gray-600 font-bold lg:text-2xl md:text-2xl px-4 py-2 focus:outline-none hover:text-opacity-80 hover:border-b-8 transition duration-500 ease-in-out border-b-2 hover:border-gray-500 focus:border-b-4 focus:border-gray-800"><a
-                                href="signUp.html">SignUp</a></button>
+                        <button [routerLink]="'/signup'"
+                            class="text-gray-600 font-bold lg:text-2xl md:text-2xl px-4 py-2 focus:outline-none hover:text-opacity-80 hover:border-b-8 transition duration-500 ease-in-out border-b-2 hover:border-gray-500 focus:border-b-4 focus:border-gray-800">SignUp</button>
                     </div>
                     <div class="mx-auto">
-                        <button
-                            class="text-gray-600 font-bold lg:text-2xl md:text-2xl px-4 py-2 focus:outline-none hover:text-opacity-80 hover:border-b-8 transition duration-500 ease-in-out border-b-2 hover:border-gray-500 focus:border-b-4 focus:border-gray-800"><a
-                                [routerLink] = "'/login'">Login</a></button>
+                        <button [routerLink]="'/login'"
+                            class="text-gray-600 font-bold lg:text-2xl md:text-2xl px-4 py-2 focus:outline-none hover:text-opacity-80 hover:border-b-8 transition duration-500 ease-in-out border-b-2 hover:border-gray-500 focus:border-b-4 focus:border-gray-800">Login
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- main form -->
+            
         <div class="bg-gray-200">
         <div class="flex">
             <div class="bg-gray-200 mx-auto px-10 py-4 lg:w-1/2 md:w-2/3 w-3/4">
@@ -113,9 +93,16 @@
                 </form>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-</body>
 
-</html>
+    </div>
+            
+
+    </div>
+      <!-- Footer -->
+      <footer class="grid grid-cols-3 py-6 bg-gray-900 text-gray-100">
+        <div class="px-4">Icons</div>
+        <div class="mx-auto">GetBuddies</div>
+        <div class="right-0 absolute pr-8">&copy; 2021</div>
+    </footer>
+    </div>
+    
