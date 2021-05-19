@@ -1,11 +1,9 @@
 
-
-export interface User{
-    id:number;
-	name:string;
-	userName:string;
-	password:string;
-	email:string;
-	phoneNumber:string;
-	city:string;
+export class User {
+    name : string;
+    city : string;
+    phoneNumber : Number;
+    password : string;
+    username : string; 
+    email : string;
 }
