@@ -1,20 +1,15 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    </head>
-    <body>
-        <!-- header -->
+
+    <!-- header -->
     <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 bg-gray-900 text-white">
         <div>
             <button class="hover:bg-gray-700 px-6 py-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-                    class="feather feather-chevron-left">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
+                <a [routerLink]="'/home'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-left">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </a>
             </button>
         </div>
         
@@ -42,7 +37,7 @@
                         <div class="flex flex-wrap text-gray-400">
                             <div class="flex flex-col py-2 ">
                                 <div class="">Name</div>
-                                <input type="text" name="name" placeholder="Team Name" class="mr-1 lg:mr-8 border-2 border-gray-500 rounded-full placeholder-opacity-40  text-gray-700 py-1 px-3 border-none focus:outline-none">
+                                <input type="text" name="name" placeholder="Team Name" class="mr-1 lg:mr-8 border-2 border-gray-500 rounded-full placeholder-opacity-40 text-gray-700 py-1 px-3 border-none focus:outline-none ">
                             </div>
                             <div class="flex flex-col py-2">
                                 <div class="">Category</div>
@@ -50,11 +45,11 @@
                             </div>
                             <div class="flex flex-col py-2">
                                 <div class="">End Date</div>
-                                <input type="text" name="" placeholder="Required till" class="mr-1 lg:mr-8 border-2 border-gray-500 rounded-full  text-gray-700 py-1 px-3 border-none focus:outline-none">
+                                <input type="text" name="" placeholder="Required till" class="mr-1 lg:mr-8 border-2 border-gray-500 rounded-full text-gray-700 py-1 px-3 border-none focus:outline-none">
                             </div>
                             <div class="flex flex-col py-2">
                                 <div class="">Number of teammates</div>
-                                <input type="text" name="" placeholder="Maximum friends required" class="mr-1 lg:mr-8 border-2 border-gray-500 rounded-full  text-gray-700 py-1 px-3 border-none focus:outline-none">
+                                <input type="text" name="" placeholder="Maximum friends required" class="mr-1 lg:mr-8 border-2 border-gray-500 rounded-full text-gray-700 py-1 px-3 border-none focus:outline-none">
                             </div>
                             <div class="flex flex-col py-2 w-full">
                                 <div class="">Description</div>
@@ -67,6 +62,9 @@
                 </div>
             </div>
         </div>
-    
-    </body>
-</html>
+    <!-- Footer -->
+<footer class="grid grid-cols-3 py-6 bg-gray-900 text-gray-100">
+    <div class="px-4">Icons</div>
+    <div class="mx-auto">GetBuddies</div>
+    <div class="right-0 absolute pr-8">&copy; 2021</div>
+</footer>
