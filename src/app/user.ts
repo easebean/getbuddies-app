@@ -1,4 +1,4 @@
-import { Room } from "./Room";
+
 
 export interface User{
     id:number;
@@ -8,5 +8,4 @@ export interface User{
 	email:string;
 	phoneNumber:string;
 	city:string;
-	rooms:Room[];
 }

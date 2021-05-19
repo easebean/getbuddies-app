@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Auth } from '../auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,14 +6,10 @@ import { Auth } from '../auth.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  path:string
-  constructor(public auth:Auth) { }
+  auth:boolean = true
+  
+  constructor() {}
 
-  ngOnInit(): void {
-    if(this.auth.isAuth)
-    this.path = "/create-team"
-    else
-    this.path = "/signup"
-  }
+  ngOnInit() {}
 
 }
