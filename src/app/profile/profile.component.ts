@@ -13,6 +13,7 @@ userName:string;
 phoneNumber:string;
 country:string;
 email:string;
+
   constructor() { }
 
   ngOnInit(): void {
