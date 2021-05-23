@@ -1,96 +1,99 @@
-<!-- header -->
-<div class="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 bg-gray-800 text-white">
-    <div>
-        <button [routerLink] = "'/home'" class="hover:bg-gray-700 px-6 py-4 focus:outline-none">
+    <!-- header -->
+  
+    <div   class="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 bg-gray-800 text-white">
+        <div>
+            <button class="hover:bg-gray-700 px-6 py-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-left">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+        </div>
+        <div class="px-6 py-4 mx-auto font-semibold text-gray-200">
+            <div class="flex">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-chevron-left">
-                <polyline points="15 18 9 12 15 6"></polyline>
+                class="feather feather-user">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
             </svg>
-        </button>
+            <div class="px-1">My Profile</div>
+        </div>
+        </div>
+        <div>
+            <div class="px-6 py-4 text-left absolute inset-y-0 right-0">GetBuddies</div>
+        </div>
     </div>
-    <div class="px-6 py-4 mx-auto font-semibold text-gray-200">
-        <div class="flex">
-            <button class="focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-                        class="feather feather-user">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-            </button>
-        <div class="px-1">My Profile</div>
-    </div>
-    </div>
-    <div>
-        <div class="px-6 py-4 text-left absolute inset-y-0 right-0">GetBuddies</div>
-    </div>
-</div>
-<!-- profile card container -->
-<div class="bg-gray-900 text-gray-100 pt-10 pb-4 rounded-b-2xl">
-    <!-- dp + hiUser-->
-    <div class="flex justify-center">
-        <div class="flex-col">
-            <div
-                class="flex items-center justify-center border-dashed border-gray-700 border-2 rounded-full w-40 h-40 mx-auto hover:border-gray-600">
-                <div class="flex items-center justify-center rounded-full w-36 h-36 bg-gray-800">
-                    x
-                </div>
-            </div>
-            <div class="py-4 text-center">
-                Hi, User!
-                <br>
-                <div class="text-gray-500 pb-4">
-                    Username
-                </div>
-                <div class="grid grid-cols-3">
-                    <div class="1">
-                        <div class="flex items-center justify-center">
-                            <div class="bg-gray-500 rounded-full hover:bg-gray-400">
-                                <div class="flex p-2 text-gray-800">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="p-2 text-sm ">
-                                +919876543210
-                            </div>
-                        </div>
+    <!-- profile card container -->
+    <div *ngIf="display"  class="bg-gray-900 text-gray-100 pt-10 pb-4 rounded-b-2xl">
+        <!-- dp + hiUser-->
+        <div class="flex justify-center">
+            <div class="flex flex-row">
+             <div class=" mx-4 sm:pb-4 "> <button (click)="changeMode()" class=" hover: translate-y-1border-none rounded-md"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button> </div>
+            <div class="">update profile</div></div>
+            <div class="flex-col">
+                <div
+                    class="flex items-center justify-center border-dashed border-gray-700 border-2 rounded-full w-40 h-40 mx-auto hover:border-gray-600">
+                    <div class="flex items-center justify-center rounded-full w-36 h-36 bg-gray-800">
+                        x
                     </div>
-                    <div class="2">
-                        <div class="flex items-center justify-center">
-                            <div class="bg-gray-500 rounded-full hover:bg-gray-400">
-                                <div class="flex p-2 text-gray-800">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                </div>
+                <div class="py-4 text-center">
+                    Hi, User!
+                    <br>
+                    <div class="text-gray-500 pb-4">
+                        Username
+                    </div>
+                    <div class="grid grid-cols-3">
+                        <div class="1">
+                            <div class="flex items-center justify-center">
+                                <div class="bg-gray-500 rounded-full hover:bg-gray-400">
+                                    <div class="flex p-2 text-gray-800">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="feather feather-map-pin">
-                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                        <circle cx="12" cy="10" r="3"></circle>
-                                    </svg>
+                                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                        </svg>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="p-2 text-sm ">
-                                India
+                                <div class="p-2 text-sm ">
+                                    +919876543210
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="3">
-                        <div class="flex items-center justify-center">
-                            <div class="bg-gray-500 rounded-full hover:bg-gray-400">
-                                <div class="flex p-2 text-gray-800">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-                                    </svg>
+                        <div class="2">
+                            <div class="flex items-center justify-center">
+                                <div class="bg-gray-500 rounded-full hover:bg-gray-400">
+                                    <div class="flex p-2 text-gray-800">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-map-pin">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="p-2 text-sm ">
+                                    India
                                 </div>
                             </div>
-                            <div class="p-2 text-sm ">
-                                user123@gmail.com
+                        </div>
+                        <div class="3">
+                            <div class="flex items-center justify-center">
+                                <div class="bg-gray-500 rounded-full hover:bg-gray-400">
+                                    <div class="flex p-2 text-gray-800">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="p-2 text-sm ">
+                                    user123@gmail.com
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -98,8 +101,52 @@
             </div>
         </div>
     </div>
-</div>
-<div class="bg-gray-200">
     <div>
-    </div>
+        <div class="flex flex-row justify-around" *ngIf="!display">
+    <div class="p-10 " ><button class=" transition duration-500 hover: translate-y-1 ease-out transform "  (click)="changeMode()" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></button></div>
+<div class="text-4xl p-10 font-semibold">Update form</div>
 </div>
+</div>
+
+<div class="bg-gray-200" *ngIf="!display">
+    <div class="flex">
+        <div class="bg-gray-200 mx-auto px-10 py-4 lg:w-1/2 md:w-2/3 w-3/4">
+            <form action="#">
+                <div>
+                    <label for="fullName" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Full Name</label>
+                    <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="text" placeholder="Enter your name">
+                </div>
+                <div>
+                    <label for="email" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Email ID</label>
+                    <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="email" placeholder="example@abc.com">
+                </div>
+                <div>
+                    <label for="phoneNumber" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Contact</label>
+                    <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="text" placeholder="Enter your contact number">
+                </div>
+                <div>
+                    <label for="city" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">City</label>
+                    <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="text" placeholder="Enter your city">
+                </div>
+                <div>
+                    <label for="password" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Password</label>
+                    <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="password" placeholder="Enter password">
+                </div>
+                <div>
+                    <label for="re-password" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Re-enter Password</label>
+                    <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="password" placeholder="Re-enter password">
+                </div>
+                <!-- Register button -->
+                <div class="text-center">
+                    <div>
+                        <button class="bg-gray-300 font-semibold rounded-md px-8 py-3 my-3 transition duration-500 ease-in-out hover:scale-102 hover:bg-gray-600 hover:text-gray-200 focus:outline-none">Update</button>
+                    </div>
+                </div>
+            </form>
+
+
+
+</div>
+</div>
+</div>
+    
