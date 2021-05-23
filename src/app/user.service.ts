@@ -13,9 +13,9 @@ export class UserService{
     constructor(private http:HttpClient){}
     
     public create(user:User):Observable<User>{
-        return this.http.post<User>(`${this.apiUrl}/add`,user)
+        return this.http.post<User>(`${this.apiUrl}/user/add`,user)
     }
     public login(userName:string,password:string):Observable<User>{
-        return this.http.get<User>(`${this.apiUrl}/${userName}/${password}`)
+        return this.http.get<User>(`${this.apiUrl}/user/login/${userName}/${password}`)
     }
 }
