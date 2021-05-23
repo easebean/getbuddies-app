@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
+import { User } from '../user';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  display:boolean=true;
+  name: string;
+  userName: string;
+  email: string;
+  phoneNumber: string;
+  city: string;
+  user: User
+  constructor(private app:AppComponent,private router:Router) { }
 
   ngOnInit(): void {
+    this.user = this.app.loggedUser
+    if(this.user===undefined)
+    this.router.navigate(['/login'])
+  }
+
+  changeMode() : boolean{
+ 
+   return this.display=!this.display;
   }
 
 }
