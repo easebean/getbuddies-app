@@ -1,4 +1,3 @@
-<!-- header -->
 <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 bg-gray-900 text-white">
     <div>
         <button [routerLink]="'/home'" class="hover:bg-gray-700 px-6 py-4">
@@ -15,31 +14,23 @@
     </div>
 </div>
 
-<div class="lg:w-full md:w-full w-full bg-gray-200 h-screen flex flex-col items-center">
-        <div class="py-16 flex flex-col">
-            <div class="text-3xl font-bold text-gray-800 mx-auto justify-center py-5 border-b-2 border-gray-500 flex">Search for a team</div>
-            <div class="font-light flex py-5 px-4 mx-auto justify-center"> Apply filter to find a team that meets your requirements!
-            </div>
+<div class="lg:w-full md:w-full w-full bg-gray-800 h-screen flex flex-col items-center">
+    <div class="py-8 flex flex-col">
+        <div class="text-4xl font-bold text-yellow-400 mx-auto justify-center py-5 border-b-2 border-gray-100 flex">Search for a team</div>
+        <div class="font-light flex py-5 px-4 mx-auto justify-center text-white"> Apply filter to find a team that meets your requirements!
         </div>
-
-        <div class="flex flex-wrap justify-center pb-8">
-            <div class="p-2">
-            <input type="text" name="team" class="border-2 border-gray-400 p-2" placeholder="Search by team name">
-            </div>
-            <div class="p-2">
-                <input type="text" name="category" class="border-2 border-gray-400 p-2" placeholder="Search by category">
-            </div>
-            <div class="p-2">
-                <input type="text" name="ID" class="border-2 border-gray-400 p-2" placeholder="Search by team ID">
-            </div>
-        </div>
-        <button class="bg-gray-800 text-white font-semibold px-8 py-1 hover:shadow-lg hover:bg-gray-50 hover:text-gray-900">Join</button>
-        <div class="text-gray-400 uppercase tracking-wider text-xs py-8 font-bold leading-3">Go to home</div>
     </div>
-
+    <div class="flex flex-wrap justify-center pb-10">
+        
+        <div class="px-3">
+        <input type="text" name="team" class="focus:outline-none border-2 bg-gray-300 border-gray-400 px-4 py-2 rounded-full" placeholder="Search by team name">
+        </div>
+    </div>
+    <button class="bg-gray-900 text-white font-semibold px-10 py-2 hover:shadow-lg border-2 hover:bg-gray-50 hover:text-gray-900">Search</button>
+</div>
     <!-- Footer -->
 <footer class="grid grid-cols-3 py-6 bg-gray-900 text-gray-100">
-    <div class="px-4">Icons</div>
-    <div class="mx-auto">GetBuddies</div>
-    <div class="right-0 absolute pr-8">&copy; 2021</div>
+<div class="px-4">Icons</div>
+<div class="mx-auto">GetBuddies</div>
+<div class="right-0 absolute pr-8">&copy; 2021</div>
 </footer>

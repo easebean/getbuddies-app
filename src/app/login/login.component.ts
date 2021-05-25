@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
         if (response !== null) {
           this.app.authenticated = true
           this.app.loggedUser = response
-          this.router.navigate(['/profile'])
+          this.router.navigate([`/profile/${response.id}`])
         } else{
           Swal.fire({
             title: 'Bad Credentials!',

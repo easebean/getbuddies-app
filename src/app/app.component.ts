@@ -8,9 +8,14 @@ import { User } from './user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  public authenticated: boolean = true
+  public authenticated: boolean = false
   public loggedUser:User
   
+  constructor(){
+    if(this.loggedUser!==undefined)
+    this.authenticated = true
+  }
+
   ngOnInit(){
 
   }

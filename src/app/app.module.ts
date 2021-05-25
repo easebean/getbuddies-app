@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
-  { path: 'profile', component: ProfileComponent},
+  { path: 'profile/:userId', component: ProfileComponent},
   { path: 'login', component: LoginComponent },
   { path: 'chat', component: ChatsComponent},
   { path: 'teams', component: DisplayTeamsComponent},
