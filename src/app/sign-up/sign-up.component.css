@@ -1,0 +1,94 @@
+.header
+{
+    @apply grid;
+    @apply grid-cols-2;
+    @apply sm:grid-cols-1;
+    @apply bg-gray-900;
+    @apply text-white;
+}
+
+.getBuddies
+{
+    @apply px-6;
+    @apply py-4;
+    @apply text-left;
+    @apply absolute;
+    @apply inset-y-0;
+    @apply right-0;
+}
+
+.heading
+{
+    @apply text-gray-600;
+    @apply font-bold;
+    @apply px-4;
+    @apply lg:text-2xl;
+    @apply md:text-xl;
+    @apply sm:px-2;
+    @apply py-4;
+    @apply transition duration-500 ease-in-out;
+    @apply border-b-2;
+    @apply hover:border-gray-500;
+    
+}
+
+.heading:hover
+{
+    @apply text-opacity-80;
+    @apply border-b-2;
+}
+
+.heading:focus
+{
+    @apply outline-none;
+    @apply border-b-2;
+    @apply border-gray-800;
+}
+
+.label
+{
+    @apply block;
+    @apply py-2;
+    @apply text-sm;
+    @apply font-bold;
+    @apply text-gray-700;
+    @apply placeholder-gray-200;
+}
+
+.input
+{
+    @apply w-full;
+    @apply px-4;
+    @apply py-2;
+    @apply border-b-2;
+    @apply rounded-md;
+    
+}
+
+.input:focus
+{
+    @apply outline-none;
+    @apply border-b-2;
+    @apply border-gray-500;
+}
+
+.button
+{
+    @apply bg-gray-300;
+    @apply font-semibold;
+    @apply rounded-md;
+    @apply px-8;
+    @apply py-3;
+    @apply my-3;
+}
+
+.button:hover
+{
+    @apply bg-gray-600;
+    @apply text-gray-200;
+}
+
+.button:focus
+{
+    @apply outline-none;
+}
