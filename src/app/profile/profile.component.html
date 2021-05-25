@@ -1,4 +1,5 @@
-    <!-- header -->
+<app-nav></app-nav>
+<!-- header -->
   
     <div   class="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 bg-gray-800 text-white">
         <div>
@@ -21,9 +22,6 @@
             <div class="px-1">My Profile</div>
         </div>
         </div>
-        <div>
-            <div class="px-6 py-4 text-left absolute inset-y-0 right-0">GetBuddies</div>
-        </div>
     </div>
     <!-- profile card container -->
     <div *ngIf="display"  class="bg-gray-900 text-gray-100 pt-10 pb-4 rounded-b-2xl">
@@ -41,7 +39,7 @@
                     Hi, {{user.name}}!
                     <br>
                     <div class="text-gray-500 pb-4">
-                        Username
+                        @{{user.userName}}
                     </div>
                     <div class="grid grid-cols-3">
                         <div class="1">
@@ -96,7 +94,7 @@
                         </div>
                     </div>
                     <!-- update profile -->
-                    <div class="flex justify-center pt-6 text-gray-200 text-sm">
+                    <div *ngIf="isLogged" class="flex justify-center pt-6 text-gray-200 text-sm">
                         <div class=" mx-4 sm:pb-4 ">
                            <button (click)="changeMode()" class=" hover: translate-y-1border-none rounded-md focus:outline-none">
                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
