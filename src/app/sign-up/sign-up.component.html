@@ -1,145 +1,93 @@
-
 <!-- header -->
-    <div class="header">
-        <div>
-            <button [routerLink]="'/home'" class="hover:bg-gray-700 px-6 py-4">
-                <div>
-                    <button class="hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
+<div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 bg-gray-900 text-white">
+    <div>
+        <button [routerLink]="'/home'" class="hover:bg-gray-700 px-6 py-4">
+            <div>
+                <button class="hover:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-chevron-left">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </button>
+    </div>
+    <div>
+        <div class="px-6 py-4 text-left absolute inset-y-0 right-0">GetBuddies</div>
+    </div>
+</div>
+
+<!-- main container -->
+<div class="main">
+    <div class="w-1/2 lg:w-1/2 md:w-1/2 sm:w-full mx-auto">
+        <div class="flex flex-col">
+            <!-- heading SignUp -->
+            <div class="flex text-base p-4">
+                <div class="mx-auto">
+                    <button [routerLink]="'/signup'"
+                        class="text-gray-600 font-bold lg:text-2xl md:text-2xl px-4 py-2 focus:outline-none hover:text-opacity-80 hover:border-b-8 transition duration-500 ease-in-out border-b-2 hover:border-gray-500 focus:border-b-4 focus:border-gray-800">SignUp</button>
+                </div>
+                <div class="mx-auto">
+                    <button [routerLink]="'/login'"
+                        class="text-gray-600 font-bold lg:text-2xl md:text-2xl px-4 py-2 focus:outline-none hover:text-opacity-80 hover:border-b-8 transition duration-500 ease-in-out border-b-2 hover:border-gray-500 focus:border-b-4 focus:border-gray-800">Login
                     </button>
                 </div>
-            </button>
+            </div>
         </div>
-        <div>
-            <div class="getBuddies">GetBuddies</div>
-        </div>
-    </div>
 
-    <!-- main container -->
-    <div class="main">
-        <div class="mx-auto w-3/4 lg:w-1/2 md:w-3/4 sm:w-full">
-            <div class="flex flex-col">
-                <!-- heading SignUp -->
-                <div class="flex text-base p-4">
-                    <div class="mx-auto">
-                        <button [routerLink]="'/signup'"
-                            class="heading">SignUp</button>
-                    </div>
-                    <div class="mx-auto">
-                        <button [routerLink]="'/login'"
-                            class="heading">Login
-                        </button>
-                    </div>
+        <!-- main form -->
+
+        <div class="bg-gray-200">
+            <div class="flex">
+                <div class="bg-gray-200 mx-auto px-10 py-4 lg:w-1/2 md:w-2/3 w-3/4">
+                    <form #sign="ngForm" (ngSubmit)="onAdd(sign)">
+                        <div>
+                            <label for="fullName" class="txt">Full Name</label>
+                            <input class="fields" name="name" ngModel required type="text" placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label for="userName" class="txt">Username</label>
+                            <input class="fields" name="userName" ngModel required type="text" placeholder="Enter username">
+                        </div>
+                        <div>
+                            <label for="email" class="txt">Email ID</label>
+                            <input class="fields" name="email" ngModel required type="email" placeholder="example@abc.com">
+                        </div>
+                        <div>
+                            <label for="phoneNumber" class="txt">Contact</label>
+                            <input class="fields" name="phoneNumber" ngModel required type="text" placeholder="Enter your contact number">
+                        </div>
+                        <div>
+                            <label for="city" class="txt">City</label>
+                            <input class="fields" name="city" ngModel required type="text" placeholder="Enter your city">
+                        </div>
+                        <div>
+                            <label for="password" class="txt">Password</label>
+                            <input class="fields" name="password" ngModel required type="password" placeholder="Enter password">
+                        </div>
+                        <div>
+                            <label for="rePassword" class="txt">Re-enter Password</label>
+                            <input class="fields" name="rePassword" ngModel required type="password" placeholder="Re-enter password">
+                        </div>
+                        <!-- Register button -->
+                        <div class="text-center">
+                            <div>
+                                <button [disabled]="sign.invalid" class="btn">GET REGISTERED</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
 
-            <!-- main form -->
-            
-        <div class="bg-gray-200">
-        <div class="flex">
-            <div class="bg-gray-200 mx-auto px-10 py-4 w-11/12 lg:w-4/5 md:w-4/5">
-                <form action="#">
-                    <div>
-                        <label for="fullName"
-                            class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Full Name</label>
-                        <input [(ngModel)] = "name"
-                            class="input transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102"
-                            type="text" placeholder="Enter your name">
-                    </div>
-                    <div>
-                        <label for="email" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Email
-                            ID</label>
-                        <input [(ngModel)] = "email"
-                            class="input transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102"
-                            type="email" placeholder="example@abc.com">
-                    </div>
-                    <div>
-                        <label for="phoneNumber"
-                            class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Contact</label>
-                        <input [(ngModel)] = "phoneNumber"
-                            class="input transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102"
-                            type="text" placeholder="Enter your contact number">
-                    </div>
-                    <div>
-                        <label for="city"
-                            class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">City</label>
-                        <input [(ngModel)] = "city"
-                            class="input transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102"
-                            type="text" placeholder="Enter your city">
-                    </div>
-                    <div>
-                        <label for="password"
-                            class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Password</label>
-                        <input [(ngModel)] = "password"
-                            class="input transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102"
-                            type="password" placeholder="Enter password">
-                    </div>
-                    <div>
-                        <label for="re-password"
-                            class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Re-enter
-                            Password</label>
-                        <input [(ngModel)] = "re_password"
-                            class="input transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102"
-                            type="password" placeholder="Re-enter password">
-                    </div>
-                    <!-- Register button -->
-                    <div class="text-center">
-                        <div>
-                            <button
-                                class="button">
-                                GET REGISTERED</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
         </div>
 
-            <div class="bg-gray-200">
-                <div class="flex">
-                    <div class="bg-gray-200 mx-auto px-10 py-4 lg:w-1/2 md:w-2/3 w-3/4">
-                        <form action="#">
-                            <div>
-                                <label for="fullName" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Full Name</label>
-                                <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="text" placeholder="Enter your name">
-                            </div>
-                            <div>
-                                <label for="email" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Email ID</label>
-                                <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="email" placeholder="example@abc.com">
-                            </div>
-                            <div>
-                                <label for="phoneNumber" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Contact</label>
-                                <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="text" placeholder="Enter your contact number">
-                            </div>
-                            <div>
-                                <label for="city" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">City</label>
-                                <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="text" placeholder="Enter your city">
-                            </div>
-                            <div>
-                                <label for="password" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Password</label>
-                                <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="password" placeholder="Enter password">
-                            </div>
-                            <div>
-                                <label for="re-password" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Re-enter Password</label>
-                                <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="password" placeholder="Re-enter password">
-                            </div>
-                            <!-- Register button -->
-                            <div class="text-center">
-                                <div>
-                                    <button class="bg-gray-300 font-semibold rounded-md px-8 py-3 my-3 transition duration-500 ease-in-out hover:scale-102 hover:bg-gray-600 hover:text-gray-200 focus:outline-none">GET REGISTERED</button>
-                                </div>
-                            </div>
-                        </form>
-
-            
 
     </div>
-</div>
-</div>
-      <!-- Footer -->
-      <footer class="grid grid-cols-3 py-6 bg-gray-900 text-gray-100">
+    <!-- Footer -->
+    <footer class="grid grid-cols-3 py-6 bg-gray-900 text-gray-100">
         <div class="px-4">Icons</div>
         <div class="mx-auto">GetBuddies</div>
         <div class="right-0 absolute pr-8">&copy; 2021</div>
     </footer>
-    </div>
-
+</div>

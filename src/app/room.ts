@@ -8,6 +8,7 @@ export interface Room{
     createdBy:string;
     created:Date;
     endTime:Date;
+    details:string;
     users:User[];
     chat:ChatsComponent[];
 }

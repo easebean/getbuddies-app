@@ -1,70 +1,72 @@
+<!-- header -->
+<div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 bg-gray-900 text-white">
+    <div>
+        <button class="hover:bg-gray-700 px-6 py-4">
+            <a [routerLink]="'/home'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-left">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </a>
+        </button>
+    </div>
+    
+    <div>
+        <div class="px-6 py-4 text-left absolute inset-y-0 right-0">GetBuddies</div>
+    </div>
+</div>
 
-    <!-- header -->
-    <div class="header">
-        <div>
-            <button class="hover:bg-gray-700 px-6 py-4">
-                <a [routerLink]="'/home'">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-                        class="feather feather-chevron-left">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </a>
-            </button>
+    <div class="flex flex-col md:flex-row w-full h-full sm:full">
+        <div class="lg:w-1/3 md:w-1/3 w-full h-full flex items-center bg-gray-300">
+            <div class="pl-8 py-16 ">
+                <div class="text-3xl font-bold text-gray-800">Create a Team!</div>
+                <div class="font-light flex">
+                    <div class="border-b-2 border-gray-500 flex">
+                    Create if you did not find one!</div>
+                </div>
+            </div>
         </div>
-        
-        <div>
-            <div class="px-6 py-4 text-left absolute inset-y-0 right-0">GetBuddies</div>
+        <div class="bg-gray-700 lg:w-2/3 md:w-2/3 w-full">
+            <div class="flex h-screen justify-center items-center">
+                <div class="px-16 mx-10">
+                    <div class="text-2xl font-bold text-yellow-400">New Team</div>
+                    <div class="font-light text-white">Customize it as per your need!</div>
+                    <div class="flex flex-wrap text-gray-400">
+                        <div class="flex flex-col py-2 ">
+                            <div class="">Name</div>
+                            <input type="text" name="name" placeholder="Team Name" class="mr-1 lg:mr-8 border-2 border-gray-500 rounded-full placeholder-opacity-40 text-gray-700 py-1 px-3 border-none focus:outline-none ">
+                        </div>
+                        <div class="flex flex-col py-2">
+                            <label for="category">Category</label>
+                            <select class="w-52 mr-1 lg:mr-8 border-2 border-gray-500 rounded-full text-gray-700 py-1 px-3 border-none focus:outline-none" name="category" id="category">
+                                <option value="I">Indoor</option>
+                                <option value="O">Outdoor</option>
+                            </select>
+                           
+                        </div>
+                        <div class="flex flex-col py-2">
+                            <div class="">End Date</div>
+                            <input type="date" name="" placeholder="Required till" class="w-52 mr-1 lg:mr-8 border-2 border-gray-500 rounded-full text-gray-700 py-1 px-3 border-none focus:outline-none">
+                        </div>
+                        <div class="flex flex-col py-2">
+                            <div class="">Number of teammates</div>
+                            <input type="number" name="" placeholder="Friends required" class="mr-1 lg:mr-8 border-2 border-gray-500 rounded-full text-gray-700 py-1 px-3 border-none focus:outline-none">
+                        </div>
+                        <div class="flex flex-col py-2 w-full">
+                            <div class="">Description</div>
+                            <div class="w-11/12 md:w-1/2 lg:w-2/3 sm:w-3/4">
+                                <textarea name="" cols="30" rows="4" class="w-full border-2 border-gray-500 text-gray-700 py-1 px-3 border-none focus:outline-none"></textarea></div>
+                        </div>
+                    </div>
+                    <button class="bg-gray-800 text-white font-semibold px-4 py-1 hover:shadow-lg hover:bg-gray-50 hover:text-gray-900">Create</button>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- main container -->
-        <div class="flex flex-col md:flex-row w-screen h-screen sm:full">
-            <div class="lg:w-1/3 md:w-1/3 w-full h-full flex items-center bg-gray-300">
-                <div class="pl-8 py-16 ">
-                    <div class="text-3xl font-bold text-gray-800">Create a Team!</div>
-                    <div class="font-light flex">
-                        <div class="border-b-2 border-gray-500 flex">
-                        Create if you did not find one!</div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-gray-700 lg:w-2/3 md:w-2/3 w-full">
-                <div class="flex h-screen justify-center items-center">
-                    <div class="px-16 mx-10">
-                        <div class="text-2xl font-bold text-yellow-400">New Team</div>
-                        <div class="font-light text-white">Customize it as per your need!</div>
-                        <div class="flex flex-wrap text-gray-400">
-                            <div class="flex flex-col py-2">
-                                <div class="">Name</div>
-                                <input type="text" name="name" placeholder="Team Name" class="input">
-                            </div>
-                            <div class="flex flex-col py-2">
-                                <div class="">Category</div>
-                                <input type="text" name="category" placeholder="Team Category" class="input">
-                            </div>
-                            <div class="flex flex-col py-2">
-                                <div class="">End Date</div>
-                                <input type="text" name="" placeholder="Required till" class="input">
-                            </div>
-                            <div class="flex flex-col py-2">
-                                <div class="">Number of teammates</div>
-                                <input type="text" name="" placeholder="Maximum friends required" class="input">
-                            </div>
-                            <div class="flex flex-col py-2 w-full">
-                                <div class="">Description</div>
-                                <div class="w-11/12 md:w-1/2 lg:w-2/3 sm:w-3/4">
-                                    <textarea name="" cols="30" rows="4" class="w-full border-2 border-gray-500 text-gray-700 py-1 px-3 border-none focus:outline-none"></textarea></div>
-                            </div>
-                        </div>
-                        <button class="button">Create</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <!-- Footer -->
-<footer class="grid grid-cols-3 py-6 bg-gray-900 text-gray-100">
-    <div class="px-4">Icons</div>
-    <div class="mx-auto">GetBuddies</div>
-    <div class="right-0 absolute pr-8">&copy; 2021</div>
+<!-- Footer -->
+<footer class="relative bottom-0 grid grid-cols-3 py-6 bg-gray-900 text-gray-100">
+<div class="px-4">Icons</div>
+<div class="mx-auto">GetBuddies</div>
+<div class="right-0 absolute pr-8 py-6">&copy; 2021</div>
 </footer>

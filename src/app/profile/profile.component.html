@@ -1,8 +1,9 @@
-    <!-- header -->
+<app-nav></app-nav>
+<!-- header -->
   
     <div   class="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 bg-gray-800 text-white">
         <div>
-            <button class="hover:bg-gray-700 px-6 py-4">
+            <button [routerLink]="'/home'" class="hover:bg-gray-700 px-6 py-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
                     class="feather feather-chevron-left">
@@ -21,9 +22,6 @@
             <div class="px-1">My Profile</div>
         </div>
         </div>
-        <div>
-            <div class="px-6 py-4 text-left absolute inset-y-0 right-0">GetBuddies</div>
-        </div>
     </div>
     <!-- profile card container -->
     <div *ngIf="display"  class="bg-gray-900 text-gray-100 pt-10 pb-4 rounded-b-2xl">
@@ -38,10 +36,10 @@
                     </div>
                 </div>
                 <div class="py-4 text-center">
-                    Hi, User!
+                    Hi, {{user.name}}!
                     <br>
                     <div class="text-gray-500 pb-4">
-                        Username
+                        @{{user.userName}}
                     </div>
                     <div class="grid grid-cols-3">
                         <div class="1">
@@ -56,7 +54,7 @@
                                     </div>
                                 </div>
                                 <div class="p-2 text-sm ">
-                                    +919876543210
+                                    {{user.phoneNumber}}
                                 </div>
                             </div>
                         </div>
@@ -74,7 +72,7 @@
                                     </div>
                                 </div>
                                 <div class="p-2 text-sm ">
-                                    India
+                                    {{user.city}}
                                 </div>
                             </div>
                         </div>
@@ -89,8 +87,8 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="p-2 text-sm ">
-                                    user123@gmail.com
+                                <div class="p-2 text-sm">
+                                    {{user.email}}
                                 </div>
                             </div>
                         </div>
@@ -128,35 +126,32 @@
 <div class="bg-gray-200" *ngIf="!display">
     <div class="flex">
         <div class="bg-gray-200 mx-auto px-10 py-4 lg:w-1/2 md:w-2/3 w-3/4">
-            <form action="#">
+            <form>
                 <div>
                     <label for="fullName" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Full Name</label>
-                    <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="text" placeholder="Enter your name">
+                    <input class="fields" [(ngModel)]="name" required name="name" type="text" placeholder="Enter your name">
                 </div>
                 <div>
                     <label for="email" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Email ID</label>
-                    <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="email" placeholder="example@abc.com">
+                    <input class="fields" [(ngModel)]="email" required name="email" type="email" placeholder="example@abc.com">
                 </div>
                 <div>
                     <label for="phoneNumber" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Contact</label>
-                    <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="text" placeholder="Enter your contact number">
+                    <input class="fields" [(ngModel)]="phoneNumber" required name="phoneNumber" type="text" placeholder="Enter your contact number">
                 </div>
                 <div>
                     <label for="city" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">City</label>
-                    <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="text" placeholder="Enter your city">
+                    <input class="fields" [(ngModel)]="city" required name="city" type="text" placeholder="Enter your city">
                 </div>
                 <div>
                     <label for="password" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Password</label>
-                    <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="password" placeholder="Enter password">
+                    <input class="fields" [(ngModel)]="password" required name="password" type="password" placeholder="Enter password">
                 </div>
-                <div>
-                    <label for="re-password" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Re-enter Password</label>
-                    <input class="transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102 w-full px-4 py-2 border-b-2 rounded-md focus:outline-none focus:border-b-8 focus:border-gray-500" type="password" placeholder="Re-enter password">
-                </div>
+                
                 <!-- Register button -->
                 <div class="text-center">
                     <div>
-                        <button class="bg-gray-300 font-semibold rounded-md px-8 py-3 my-3 transition duration-500 ease-in-out hover:scale-102 hover:bg-gray-600 hover:text-gray-200 focus:outline-none">Update</button>
+                        <button class="btn">Update</button>
                     </div>
                 </div>
             </form>
