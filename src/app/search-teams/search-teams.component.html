@@ -1,54 +1,65 @@
 <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 bg-gray-900 text-white">
     <div>
         <button [routerLink]="'/home'" class="hover:bg-gray-700 px-6 py-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-                    class="feather feather-chevron-left">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-chevron-left">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
         </button>
     </div>
-    
+
     <div>
         <div class="px-6 py-4 text-left absolute inset-y-0 right-0">GetBuddies</div>
     </div>
 </div>
-<div class="lg:w-full md:w-full w-full bg-gray-800 h-screen flex flex-col items-center">
+
+<div class="lg:w-full md:w-full w-full bg-gray-800 min-h-screen flex flex-col items-center">
     <div class="py-8 flex flex-col">
-        <div class="text-4xl font-bold text-yellow-400 mx-auto justify-center py-5 border-b-2 border-gray-100 flex">Search for a team</div>
-        <div class="font-light flex py-5 px-4 mx-auto justify-center text-white"> Apply filter to find a team that meets your requirements!
+        <div class="text-4xl font-bold text-yellow-400 mx-auto justify-center py-5 border-b-2 border-gray-100 flex">
+            Search for a team</div>
+        <div class="font-light flex py-5 px-4 mx-auto justify-center text-white"> Apply filter to find a team that meets
+            your requirements!
         </div>
     </div>
     <div class="flex flex-wrap justify-center pb-10">
-        
+
         <div class="px-3">
-        <input type="text" name="team" class="focus:outline-none border-2 bg-gray-300 border-gray-400 px-4 py-2 rounded-full" placeholder="Search by team name">
+            <input type="text" [(ngModel)]="key"
+                class="focus:outline-none border-2 bg-gray-300 border-gray-400 px-4 py-2 rounded-full"
+                placeholder="Search by team name">
         </div>
     </div>
-  
-    <button class="bg-gray-900 text-white font-semibold px-10 py-2 hover:shadow-lg border-2 hover:bg-gray-50 hover:text-gray-900">Search</button>
-
-    <div class="my-10 w-full">
-        <!-- generate the search results -->
-        <div *ngFor = "let team of teams">
-            <div class="w-11/12 m-1 px-5 py-2 rounded-lg shadow-md mx-auto flex bg-gray-50 align-middle justify-between">
-                <div class="my-auto">
-                    Team Name
+    <button (click)="onSearch()"
+        class="bg-gray-900 text-white font-semibold px-10 py-2 hover:shadow-lg rounded-md focus:outline-none hover:bg-gray-50 hover:text-gray-900">Search</button>
+    <div class="py-4 w-full">
+        <div class="py-1" *ngFor="let team of rooms">
+            <div
+                class="w-2/3 m-1 px-5 py-2 rounded-lg shadow-md mx-auto flex bg-gray-50 align-middle justify-between">
+                <div class="px-3 items-center flex">
+                    {{team.name}}
                 </div>
-                <div class="my-auto text-gray-500">
-                    Created by
+                <div class="px-3 items-center flex text-gray-500">
+                    {{team.createdBy}}
                 </div>
-                <div class="my-auto">
-                    <button (click)="joinTeam()" class="p-1 rounded-full bg-gray-300 hover:bg-gray-400 focus:bg-gray-500 focus:outline-none">
+                <div class="px-3 items-center flex">
+                    <button (click)="joinTeam(team)"
+                        class="p-1 rounded-full bg-gray-300 hover:bg-gray-400 focus:bg-gray-500 focus:outline-none">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-plus">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
+<!-- Footer -->
+<footer class="grid grid-cols-3 py-6 bg-gray-900 text-gray-100">
+    <div class="px-4">Icons</div>
+    <div class="mx-auto">GetBuddies</div>
+    <div class="right-0 absolute pr-8">&copy; 2021</div>
+</footer>

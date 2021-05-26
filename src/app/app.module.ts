@@ -16,6 +16,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
+import { OrderByPipe } from './orderBy';
 
 const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'chat', component: ChatsComponent},
+  { path: 'chat/:roomId', component: ChatsComponent},
   { path: 'teams', component: DisplayTeamsComponent},
   { path: 'search', component: SearchTeamsComponent},
   { path: 'create-team', component: CreateTeamComponent},
@@ -44,7 +46,8 @@ const routes: Routes = [
     DisplayTeamsComponent,
     Error404Component,
     CreateTeamComponent,
-    AdminComponent
+    AdminComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
