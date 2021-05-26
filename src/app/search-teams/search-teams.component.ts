@@ -12,4 +12,9 @@ export class SearchTeamsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  teams: any;
+  joinTeam()
+  {
+
+  }
 }
