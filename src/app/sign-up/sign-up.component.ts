@@ -45,7 +45,7 @@ export class SignUpComponent implements OnInit {
           icon: 'success',
           confirmButtonText: 'Cool'
         })
-        this.router.navigate(['/profile'])
+        this.router.navigate(['/profile',response.id])
       },
       (error: HttpErrorResponse) => {
         console.log(error.message);

@@ -12,7 +12,7 @@
     <div class="flex py-16 w-1/3 justify-center bg-gray-500">
       <div class="flex-col py-16">
         <div class="px-4">
-        <button 
+        <button (click)="searchUser()"
           class="hover:bg-gray-600 rounded-lg w-8 h-8 px-1 focus:outline-none"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
         </button>
       </div>
@@ -37,7 +37,7 @@
       ></textarea>
       <button type="submit" [disabled]="chat.invalid" class="mr-8 rounded-sm" style="outline: none;">
         <svg
-          class="svg-inline--fa text-gray-800 fa-paper-plane fa-w-16 w-12 h-12 py-2 mr-2"
+          class="svg-inline--fa text-gray-800 fa-paper-plane fa-w-12 w-10 h-10 py-2 mr-2"
           aria-hidden="true"
           focusable="false"
           data-prefix="fas"
