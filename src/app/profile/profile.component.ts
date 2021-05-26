@@ -42,8 +42,12 @@ export class ProfileComponent implements OnInit {
       console.log(this.user);
     }
   }
-  update(update: NgForm){
-    
+  onUpdate(update: NgForm){
+    this.userService.update(this.user).subscribe(
+      (response:any)=>{
+        console.log(response);        
+      }
+    )
   }
   changeMode() : boolean{
    return this.display=!this.display;

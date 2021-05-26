@@ -21,11 +21,8 @@
             <div class="font-semibold text-gray-400 flex py-5 px-4 mx-auto justify-center"> All your groups are displayed here.
         </div>
     </div>
-    <div class="flex flex-wrap justify-center pb-8">
-        <div class="p-2 space-x-4">
-            <input type="text" name="" class=" font-light focus:outline-none border-gray-400 px-10 py-2 rounded-full" placeholder="Search here">
-            <button class="bg-gray-800 text-white font-semibold px-8 py-2 hover:shadow-lg hover:bg-gray-50 hover:text-gray-900 uppercase text-sm rounded-md">Search</button>
-            </div>
+    <div [routerLink]="'/search'" *ngIf="rooms.length<1" class="font-semibold border-2 border-gray-500 text-gray-400 flex py-5 px-4 mx-auto justify-center">
+        Please join/create a team
     </div>
     </div>
     </div>
@@ -34,11 +31,13 @@
             <div>
                 <div *ngFor="let room of rooms" class="m-4 py-4 rounded-full text-2xl bg-gray-400 flex justify-between px-8 transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102">
                     <span class="sm:pl-3 lg:text-2xl text-gray-900 font-medium pl-8">{{room.name}}</span > 
-                    <span class="text-gray-900 font-medium mx-auto">{{room.category}}</span>
+                    <div class="text-gray-900 font-medium flex items-center mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <div class="px-2">{{room.users.length}}</div></div>
                     <button [routerLink]="['/chat',room.id]" class="py-1 px-10">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                     </button>
-                    <button (click)="leave(room.id)" class="py-1">
+                    <button (click)="leave(room)" class="py-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                     </button>
                 </div>
