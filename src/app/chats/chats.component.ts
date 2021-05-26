@@ -75,6 +75,7 @@ export class ChatsComponent implements OnInit {
 
     }).then(
       (result) => {
+        if(result.isConfirmed){
         this.roomService.addUser(this.room, result.value).subscribe(
           (response: any) => {
             Swal.fire({
@@ -88,6 +89,7 @@ export class ChatsComponent implements OnInit {
           }
         )
       }
+    }
     )
 
   }

@@ -34,7 +34,7 @@
             <div>
                 <div *ngFor="let room of rooms" class="m-4 py-4 rounded-full text-2xl bg-gray-400 flex justify-between px-8 transition duration-500 ease-out transform hover:-translate-y-1 hover:scale-102">
                     <span class="sm:pl-3 lg:text-2xl text-gray-900 font-medium pl-8">{{room.name}}</span > 
-                    <span class="text-gray-900 font-medium mx-auto">{{room.category}}</span>
+                    <span class="text-gray-900 font-medium flex mx-auto">{{room.users.length}}</span>
                     <button [routerLink]="['/chat',room.id]" class="py-1 px-10">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                     </button>
