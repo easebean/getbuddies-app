@@ -1,6 +1,6 @@
 
 export interface ChatMessage{
-    id:Number;
+    id?:number;
     text:string;
     author:string;
     createDate:Date;

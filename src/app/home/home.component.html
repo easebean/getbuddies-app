@@ -11,11 +11,12 @@
             <div class="py-6 grid-cols-4 lg:grid-cols-3 grid">
                 <div class="lg:col-span-3 col-span-2">
                     <div class="lg:grid-cols-2 gap-10 sm:col-span-3 md:col-span-2 lg:grid text-sm md:text-base">
-                        <button [routerLink]="'/signup'"
-                            class="uppercase w-full bg-white hover:bg-yellow-200 hover:text-gray-800 m-4 text-gray-600 font-bold text-center rounded-full px-4 py-3 focus:outline-none">Join
-                            us now</button>
-                        <button [routerLink]="'/login'"
-                            class="uppercase w-full bg-white hover:bg-yellow-200 hover:text-gray-800 m-4 text-gray-600 font-bold text-center rounded-full px-4 py-3 focus:outline-none">login</button>
+                        <button [routerLink]="auth?'/create-team':'/signup'"
+                            class="uppercase w-full bg-white hover:bg-yellow-200 hover:text-gray-800 m-4 text-gray-600 font-bold text-center rounded-full px-4 py-3 focus:outline-none">
+                            {{auth?'Create Team':'Join us now'}}</button>
+                        <button [routerLink]="auth?'/search':'/login'"
+                            class="uppercase w-full bg-white hover:bg-yellow-200 hover:text-gray-800 m-4 text-gray-600 font-bold text-center rounded-full px-4 py-3 focus:outline-none">
+                            {{auth?'Join Team':'login'}}</button>
                     </div>
                 </div>
             </div>
@@ -66,7 +67,7 @@
     <div class="text-3xl font-bold pb-14 text-gray-700 text-center">What are the perks of joining GetBuddies?</div>
     <div class="grid lg:grid-cols-2 grid-cols-1 ">
         <!-- first column -->
-        <div>
+        <div class="mx-auto">
             <!-- first ticker -->
             <div class="flex ">
                 <div class="pt-5 mx-5 justify-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24"
@@ -102,7 +103,7 @@
             </div>
         </div>
         <!-- second column -->
-        <div>
+        <div class="mx-auto">
             <!-- first ticker -->
             <div class="flex ">
                 <div class="pt-5 mx-5 justify-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24"
@@ -112,7 +113,7 @@
                         <polyline points="22 4 12 14.01 9 11.01"></polyline>
                     </svg>
                 </div>
-                <div class="pt-5">It's free</div>
+                <div class="pt-5">It's free of cost</div>
             </div>
             <!-- second ticker -->
             <div class=" flex ">
