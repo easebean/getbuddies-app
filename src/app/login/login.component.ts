@@ -20,8 +20,6 @@ export class LoginComponent implements OnInit {
   }
 
   onLogIn(user: NgForm) {
-    console.log(user.value);
-
     this.userService.login(user.value.userName, user.value.password).subscribe(
       (response: User) => {
         console.log(response);
