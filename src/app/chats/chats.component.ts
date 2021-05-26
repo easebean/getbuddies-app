@@ -34,11 +34,11 @@ export class ChatsComponent implements OnInit {
       this.router.navigate(['/login'])
     else {
       this.get()
+      this.t = setInterval(() => { this.get() }, 1500)
       if(this.room.endTime<=new Date()){
         this.roomService.delete(this.room.id)
         this.router.navigate(['/home'])
       }
-      this.t = setInterval(() => { this.get() }, 1500)
     }
   }
 

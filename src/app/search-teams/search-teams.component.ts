@@ -30,6 +30,8 @@ export class SearchTeamsComponent implements OnInit {
     )
   }
   joinTeam(room:Room){
+    console.log(room.users.includes(this.app.loggedUser));
+    
     if(room.users.includes(this.app.loggedUser)){
       Swal.fire({
         title: 'Already a member!',
