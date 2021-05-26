@@ -1,0 +1,126 @@
+<!-- header -->
+<div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 bg-gray-800 text-white">
+    <div class="section1">
+        <button [routerLink]="'/home'" class="hover:bg-gray-700 px-6 py-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-chevron-left">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+    </div>
+    <div class="section2">
+        <div class="px-6 py-4 text-left absolute inset-y-0 right-0">GetBuddies</div>
+    </div>
+</div>
+
+<!-- heading container -->
+<div class="bg-gray-900 text-gray-100 pt-10 pb-4 items-center justify-items-center flex">
+    <div class="mx-auto">
+        <div class="items-center justify-items-center flex flex-col">
+            <div class="pb-2">
+                Hi Admin!
+            </div>
+            <div class="text-gray-500 pb-5 border-t-2 border-gray-800">
+                Please use your superpowers!
+            </div>
+        </div>
+        <div class="flex justify-center pb-4">
+            <div>
+                <button class="button" (click) = "displayAllUsers()">
+                    All Users
+                </button>
+            </div>
+            <div>
+                <button class="button" (click) = "displayAllRooms()">
+                    All Rooms
+                </button>
+            </div>
+        </div>
+
+        <!-- Users table display -->
+        <div class="mx-auto w-11/12">
+            <div *ngIf = "displayUsers">
+                <div class="table py-2">
+                    <div class="grid grid-cols-6 bg-gray-800 text-gray-200">
+                            <div class="td">Name</div>
+                            <div class="td">Username</div>
+                            <div class="td">Email ID</div>
+                            <div class="td">Contact Number</div>
+                            <div class="td">City</div>
+                            <div class="td">Edit User</div>
+                    </div>
+                    <div>
+                        <div *ngFor = "let u of users" class="grid grid-cols-6 bg-gray-700 text-gray-200">
+                            <div class="td">{{u.name}}</div>
+                            <div class="td">{{u.userName}}</div>
+                            <div class="td">{{u.email}}</div>
+                            <div class="td">{{u.phoneNumber}}</div>
+                            <div class="td">{{u.city}}</div>
+                            <div class="td flex items-center justify-center">
+                                <button (click)="deleteUser()" class="p-1 rounded-full bg-gray-800 hover:bg-gray-900 focus:bg-gray-700 focus:outline-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-trash">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rooms table display -->
+        <div class="mx-auto w-11/12">
+        <div *ngIf = "displayRooms">
+            <div>
+                <div class="table py-2">
+                    <div class="grid grid-cols-6 bg-gray-800 text-gray-200">
+                            <div class="td">Name</div>
+                            <div class="td">Category</div>
+                            <div class="td">Creator</div>
+                            <div class="td">Start Date</div>
+                            <div class="td">End Date</div>
+                            <div class="td">Edit Room</div>
+                    </div>
+                    <div>
+                        <div *ngFor = "let r of rooms" class="grid grid-cols-6 bg-gray-700 text-gray-200">
+                            <div class="td">{{r.name}}</div>
+                            <div class="td">{{r.category}}</div>
+                            <div class="td">{{r.createdBy}}</div>
+                            <div class="td">{{r.created | date}}</div>
+                            <div class="td">{{r.endTime | date}}</div>
+                            <div class="td flex items-center justify-center">
+                                <button (click)="deleteRoom()" class="p-1 rounded-full bg-gray-800 hover:bg-gray-900 focus:bg-gray-700 focus:outline-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-trash">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<footer id="ContactUs" class="grid grid-cols-3 py-4 bg-gray-800 text-gray-100">
+<div class="px-4">Icons
+</div>
+<div class="mx-auto text-center">
+    <div>
+        GetBuddies
+    </div>
+</div>
+<div class="right-0 absolute pr-8">&copy; 2021</div>
+</footer>

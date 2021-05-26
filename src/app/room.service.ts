@@ -34,4 +34,8 @@ export class RoomService{
     public delete(roomId:Room):Observable<Room>{
         return this.http.delete<Room>(`${this.apiServerUrl}/room/delete/${roomId}`)
     }
+
+    public allRooms():Observable<Room[]>{
+        return this.http.get<Room[]>(`${this.apiServerUrl}/room/all`)
+    }
 }

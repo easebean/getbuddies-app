@@ -1,0 +1,48 @@
+.header
+{
+    @apply grid;
+    @apply grid-cols-2;
+    @apply sm:grid-cols-1;
+    @apply bg-gray-900;
+    @apply text-white;
+}
+
+.getBuddies
+{
+    @apply px-6;
+    @apply py-4;
+    @apply text-left;
+    @apply absolute;
+    @apply inset-y-0;
+    @apply right-0;
+}
+
+.button
+{
+    @apply bg-gray-300;
+    @apply font-semibold;
+    @apply rounded-lg;
+    @apply px-8;
+    @apply py-3;
+    @apply m-3;
+    @apply text-gray-700;
+}
+
+.button:hover
+{
+    @apply bg-gray-600;
+    @apply text-gray-200;
+}
+
+.button:focus
+{
+    @apply outline-none;
+}
+
+.td
+{
+    @apply px-4;
+    @apply py-2;
+    @apply mx-1;
+    @apply my-1;
+}

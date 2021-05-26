@@ -32,4 +32,8 @@ export class UserService{
     public rooms(userId:number):Observable<Room>{
         return this.http.get<Room>(`${this.apiUrl}/user/room/${userId}/`)
     }
+
+    public allUsers():Observable<User[]>{
+        return this.http.get<User[]>(`${this.apiUrl}/user/all`)
+    }
 }
