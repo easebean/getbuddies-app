@@ -19,8 +19,8 @@ export class RoomService{
         return this.http.put<Room>(`${this.apiServerUrl}/room/update`,room)
     }
 
-    public addUser(room:Room,userId:number):Observable<Room>{
-        return this.http.put<Room>(`${this.apiServerUrl}/room/add/${userId}`,room)
+    public addUser(room:Room,userName:string):Observable<Room>{
+        return this.http.put<Room>(`${this.apiServerUrl}/room/add/${userName}`,room)
     }
 
     public removeUser(room:Room,userId:number):Observable<Room>{
@@ -31,7 +31,7 @@ export class RoomService{
         return this.http.get<Room>(`${this.apiServerUrl}/room/find/${name}`)
     }
 
-    public delete(roomId:Room):Observable<Room>{
+    public delete(roomId:number):Observable<Room>{
         return this.http.delete<Room>(`${this.apiServerUrl}/room/delete/${roomId}`)
     }
 
