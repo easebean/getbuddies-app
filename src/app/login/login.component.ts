@@ -20,15 +20,13 @@ export class LoginComponent implements OnInit {
   }
 
   onLogIn(user: NgForm) {
-    console.log(user.value);
-
     this.userService.login(user.value.userName, user.value.password).subscribe(
       (response: User) => {
         console.log(response);
         if (response !== null) {
           this.app.authenticated = true
           this.app.loggedUser = response
-          this.router.navigate(['/profile'])
+          this.router.navigate([`/profile/${response.id}`])
         } else{
           Swal.fire({
             title: 'Bad Credentials!',

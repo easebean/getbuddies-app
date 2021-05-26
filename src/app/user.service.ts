@@ -21,6 +21,10 @@ export class UserService{
         return this.http.get<User>(`${this.apiUrl}/user/login/${userName}/${password}`)
     }
 
+    public find(userId:number):Observable<User>{
+        return this.http.get<User>(`${this.apiUrl}/user/${userId}`)
+    }
+
     public update(user:User):Observable<User>{
         return this.http.put<User>(`${this.apiUrl}/user/update`,user)
     }
