@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-nav',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  auth:boolean = true
-  
-  constructor() {}
+  auth:boolean = false
+  userId:number
+  constructor(private app:AppComponent) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.auth = this.app.isAuth()
+    if(this.auth)
+    this.userId = this.app.loggedUser.id
+  }
 
 }
