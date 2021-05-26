@@ -122,43 +122,39 @@
 <div class="text-4xl p-10 font-semibold">Update form</div>
 </div>
 </div>
-
 <div class="bg-gray-200" *ngIf="!display">
     <div class="flex">
         <div class="bg-gray-200 mx-auto px-10 py-4 lg:w-1/2 md:w-2/3 w-3/4">
-            <form>
+            <form #update="ngForm" (ngSubmit)="update(update)">
                 <div>
                     <label for="fullName" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Full Name</label>
-                    <input class="fields" [(ngModel)]="name" required name="name" type="text" placeholder="Enter your name">
+                    <input required ngModel class="fields" [(ngModel)]="name" required name="name" type="text" placeholder="Enter your name">
                 </div>
                 <div>
                     <label for="email" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Email ID</label>
-                    <input class="fields" [(ngModel)]="email" required name="email" type="email" placeholder="example@abc.com">
+                    <input required ngModel class="fields" [(ngModel)]="email" required name="email" type="email" placeholder="example@abc.com">
                 </div>
                 <div>
                     <label for="phoneNumber" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Contact</label>
-                    <input class="fields" [(ngModel)]="phoneNumber" required name="phoneNumber" type="text" placeholder="Enter your contact number">
+                    <input required ngModel class="fields" [(ngModel)]="phoneNumber" required name="phoneNumber" type="text" placeholder="Enter your contact number">
                 </div>
                 <div>
                     <label for="city" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">City</label>
-                    <input class="fields" [(ngModel)]="city" required name="city" type="text" placeholder="Enter your city">
+                    <input required ngModel class="fields" [(ngModel)]="city" required name="city" type="text" placeholder="Enter your city">
                 </div>
                 <div>
                     <label for="password" class="block py-2 text-sm font-bold text-gray-700 placeholder-gray-200">Password</label>
-                    <input class="fields" [(ngModel)]="password" required name="password" type="password" placeholder="Enter password">
+                    <input required ngModel class="fields" [(ngModel)]="password" required name="password" type="password" placeholder="Enter password">
                 </div>
                 
                 <!-- Register button -->
                 <div class="text-center">
                     <div>
-                        <button class="btn">Update</button>
+                        <button [disabled]="create.valid" class="btn">Update</button>
                     </div>
                 </div>
             </form>
 
-
-
 </div>
 </div>
 </div>
-    
