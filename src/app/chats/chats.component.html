@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="overflow-y-auto lg:h-screen py-24 w-full">
-      <div *ngFor="let chat of room.chat | orderBy: 'createDate'" class="bg-gray-300 w-3/4 mx-4 my-2 p-2 rounded-lg">
+      <div *ngFor="let chat of room.chat | orderBy: 'createDate'" class="bg-gray-200 w-3/4 mx-4 my-2 p-2 rounded-lg hover:bg-gray-300">
         <div class="text-sm text-gray-500">{{chat.author}}</div>
         <div class="break-words">{{chat.text}}</div>
       </div>
