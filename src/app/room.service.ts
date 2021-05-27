@@ -37,6 +37,7 @@ export class RoomService{
 
     public allRooms():Observable<Room[]>{
         return this.http.get<Room[]>(`${this.apiServerUrl}/room/all`)
+    }
     public getRoom(roomId:number):Observable<Room>{
         return this.http.get<Room>(`${this.apiServerUrl}/room/${roomId}`)
     }

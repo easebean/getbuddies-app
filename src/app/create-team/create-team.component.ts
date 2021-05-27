@@ -43,10 +43,10 @@ export class CreateTeamComponent implements OnInit {
       )
     } else {
       Swal.fire({
-        title: 'Invalid access!',
-        html: `Hi, guest! <br> Login/SignUp to create team.`,
+        title: 'Invalid date!',
+        html: `Please enter a future date`,
         icon: 'warning',
-        confirmButtonText: 'Login/SignUp'
+        confirmButtonText: 'Try again'
       })
     }
   } else {
