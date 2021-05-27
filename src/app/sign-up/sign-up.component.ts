@@ -37,6 +37,7 @@ export class SignUpComponent implements OnInit {
     }
     this.userService.create(this.newUser).subscribe(
       (response: User) => {
+        this.app.authenticated = true
         this.app.loggedUser = response
         Swal.fire({
           title: 'Welcome',
