@@ -25,7 +25,8 @@
     </div>
     <div class="overflow-y-auto lg:h-screen py-24 w-full">
       <div *ngFor="let chat of room.chat | orderBy: 'createDate'" class="bg-gray-300 w-3/4 mx-4 my-2 p-2 rounded-lg">
-        {{chat.text}}
+        <div class="text-xs text-gray-500">{{chat.author}}</div>
+        <div class="break-words">{{chat.text}}</div>
       </div>
     </div>
     <form #chat="ngForm" (ngSubmit)="onSend(chat)" class="flex absolute bg-gray-400 right-0 bottom-0 w-3/4">
