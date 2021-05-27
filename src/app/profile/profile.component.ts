@@ -13,43 +13,68 @@ import { UserService } from '../user.service';
 })
 export class ProfileComponent implements OnInit {
 
-  display:boolean=true;
-  isLogged:boolean = false
+  display: boolean = true;
+  isLogged: boolean = false
   userName: string;
   user: User
-  constructor(private app:AppComponent,
-    private router:Router,
+  constructor(private app: AppComponent,
+    private router: Router,
     private route: ActivatedRoute,
-    private userService:UserService) { }
+    private userService: UserService) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const userIdFromRoute = Number(routeParams.get('userId'));
     this.isLogged = this.app.isAuth()
-    if(this.app.loggedUser===undefined){
-    this.userService.find(userIdFromRoute).subscribe(
-      (response:any) => {
-        this.user = response
-      }
-    )
-    } else{
+    if (this.app.loggedUser === undefined) {
+      this.userService.find(userIdFromRoute).subscribe(
+        (response: any) => {
+          this.user = response
+        }
+      )
+    } else {
       this.user = this.app.loggedUser
       this.userName = this.app.loggedUser.userName
     }
   }
-  onUpdate(update: NgForm){
-    this.userService.update(this.user).subscribe(
-      (response:any)=>{
-        Swal.fire({
-          title: 'Details Updated',
-          text: `${response.name} details updated`
-        })    
-        this.changeMode()   
-      }
-    )
+  onUpdate(update: NgForm) {
+    var strongRegex = new RegExp("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*_-])(?=.{8,})");
+
+    if (!(strongRegex.test(this.user.password))) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters',
+      })
+    }
+    else if (!(this.user.phoneNumber.length == 10)) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Phone number should be of 10 digits',
+      })
+    }
+    else if (!(this.user.email.includes("@"))) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Invalid Email',
+      })
+    }
+    else {
+      this.userService.update(this.user).subscribe(
+        (response: any) => {
+          Swal.fire({
+            title: 'Details Updated',
+            text: `${response.name} details updated`
+          })
+          this.changeMode()
+        }
+      )
+    }
   }
-  changeMode() : boolean{
-   return this.display=!this.display;
+  changeMode(): boolean {
+    return this.display = !this.display;
   }
 
 }
