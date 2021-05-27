@@ -38,7 +38,11 @@ export class SignUpComponent implements OnInit {
     }
 
     var strongRegex = new RegExp("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*_-])(?=.{8,})");
+    function emailIsValid(){
+      return user.value.email.includes("@");
+    }
 
+    
     if(user.value.password !== user.value.rePassword)
     {
       Swal.fire({
@@ -63,6 +67,14 @@ export class SignUpComponent implements OnInit {
         text: 'Phone number should be of 10 digits',
       })
     }
+    else if(!(emailIsValid()))
+    {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Invalid Email',
+      })
+    }
     else
     {
       this.userService.create(this.newUser).subscribe(
@@ -75,7 +87,7 @@ export class SignUpComponent implements OnInit {
             icon: 'success',
             confirmButtonText: 'Cool'
           })
-          this.router.navigate(['/profile'])
+          this.router.navigate([`/profile/${this.newUser.id}`])
         },
         (error: HttpErrorResponse) => {
           console.log(error.message);
