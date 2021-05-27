@@ -46,7 +46,8 @@ export class ProfileComponent implements OnInit {
         Swal.fire({
           title: 'Details Updated',
           text: `${response.name} details updated`
-        })       
+        })    
+        this.changeMode()   
       }
     )
   }
