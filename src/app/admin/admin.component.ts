@@ -66,6 +66,14 @@ export class AdminComponent implements OnInit {
     )
   }
   deleteRoom(roomId: number) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'Please confirm if you want to delete.',
+      confirmButtonText: `Yes`,
+      showDenyButton: true,
+      denyButtonText: `No`,
+    }).then((result)=>{
+      if(result.isConfirmed)
     this.roomService.delete(roomId).subscribe(
       (response: any) => {
         this.getAllRooms();
@@ -73,6 +81,7 @@ export class AdminComponent implements OnInit {
       (error: HttpErrorResponse) => {
         console.log(error.message);
       }
+    )}
     )
   }
   deleteUser(userId: number) {
