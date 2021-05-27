@@ -33,6 +33,7 @@
     <button (click)="onSearch()"
         class="bg-gray-900 text-white font-semibold px-10 py-2 hover:shadow-lg rounded-md focus:outline-none hover:bg-gray-50 hover:text-gray-900">Search</button>
     <div class="py-4 w-full">
+        <div *ngIf="rooms.length<1" class="py-3 flex text-gray-100 justify-center">No results found!</div>
         <div class="py-1" *ngFor="let team of rooms">
             <div
                 class="w-2/3 m-1 px-5 py-2 rounded-lg shadow-md mx-auto flex bg-gray-50 align-middle justify-between">
