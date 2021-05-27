@@ -93,6 +93,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="py-2 flex justify-center mx-auto" *ngIf="userName=='admin'">
+                        <button class="bg-gray-500 p-2 mt-2" [routerLink]="'/admin'">Admin Page</button>
+                    </div>
                     <!-- update profile -->
                     <div *ngIf="isLogged" class="flex justify-center pt-6 text-gray-200 text-sm">
                         <div class=" mx-4 sm:pb-4 ">

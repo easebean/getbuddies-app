@@ -15,11 +15,7 @@ export class ProfileComponent implements OnInit {
 
   display:boolean=true;
   isLogged:boolean = false
-  name: string;
   userName: string;
-  email: string;
-  phoneNumber: string;
-  city: string;
   user: User
   constructor(private app:AppComponent,
     private router:Router,
@@ -38,6 +34,7 @@ export class ProfileComponent implements OnInit {
     )
     } else{
       this.user = this.app.loggedUser
+      this.userName = this.app.loggedUser.userName
     }
   }
   onUpdate(update: NgForm){
