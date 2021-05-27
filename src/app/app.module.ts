@@ -16,11 +16,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { OrderByPipe } from './orderBy';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'profile/:userId', component: ProfileComponent},
   { path: 'login', component: LoginComponent },
+  { path: 'admin', component: AdminComponent },
   { path: 'chat/:roomId', component: ChatsComponent},
   { path: 'teams', component: DisplayTeamsComponent},
   { path: 'search', component: SearchTeamsComponent},
@@ -43,7 +45,8 @@ const routes: Routes = [
     DisplayTeamsComponent,
     Error404Component,
     CreateTeamComponent,
-    OrderByPipe
+    OrderByPipe,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

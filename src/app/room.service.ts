@@ -31,11 +31,15 @@ export class RoomService{
         return this.http.get<Room>(`${this.apiServerUrl}/room/find/${name}`)
     }
 
-    public delete(roomId:number):Observable<Room>{
-        return this.http.delete<Room>(`${this.apiServerUrl}/room/delete/${roomId}`)
+    public delete(roomId:number):Observable<void>{
+        return this.http.delete<void>(`${this.apiServerUrl}/room/delete/${roomId}`)
     }
 
     public getRoom(roomId:number):Observable<Room>{
         return this.http.get<Room>(`${this.apiServerUrl}/room/${roomId}`)
+    }
+
+    public allRooms():Observable<Room>{
+        return this.http.get<Room>(`${this.apiServerUrl}/room/all`)
     }
 }
