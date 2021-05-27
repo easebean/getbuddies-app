@@ -37,7 +37,8 @@ export class ProfileComponent implements OnInit {
       }
     )
     } else{
-      this.user = this.app.loggedUser
+      this.user = this.app.loggedUser;
+      this.userName = this.app.loggedUser.userName;
     }
   }
   onUpdate(update: NgForm){
