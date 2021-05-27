@@ -49,7 +49,6 @@ export class ChatsComponent implements OnInit {
     this.roomService.getRoom(this.roomIdFromRoute).subscribe(
       (response: any) => {
         this.room = response
-        console.log(this.room);
       }
     )
   }
@@ -59,7 +58,6 @@ export class ChatsComponent implements OnInit {
     this.chatService.sendChat({ text: c.text, author: this.app.loggedUser.name, createDate: new Date() }, this.roomIdFromRoute)
       .subscribe(
         (response: any) => {
-          console.log(response);
           chat.reset()
         }
       )

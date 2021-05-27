@@ -22,10 +22,13 @@ export class LoginComponent implements OnInit {
   onLogIn(user: NgForm) {
     this.userService.login(user.value.userName, user.value.password).subscribe(
       (response: User) => {
-        console.log(response);
         if (response !== null) {
           this.app.authenticated = true
           this.app.loggedUser = response
+                    
+          if(user.value.userName=='admin'){
+            this.router.navigate(['/admin'])  
+          } else
           this.router.navigate([`/profile/${response.id}`])
         } else{
           Swal.fire({
