@@ -22,6 +22,7 @@ export class SignUpComponent implements OnInit {
   email: string;
   phoneNumber: string;
   city: string;
+  
   constructor(private userService: UserService,private router: Router,private app:AppComponent) { }
 
   ngOnInit(): void {

@@ -41,15 +41,45 @@ export class ProfileComponent implements OnInit {
       this.userName = this.app.loggedUser.userName;
     }
   }
+
   onUpdate(update: NgForm){
-    this.userService.update(this.user).subscribe(
+
+    //password,phone number and email validation
+    var strongRegex = new RegExp("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*_-])(?=.{8,})");
+
+    if(!(strongRegex.test(this.user.password)))
+    {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters',
+      })
+    }
+    else if(!(this.user.phoneNumber.length == 10))
+    {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Phone number should be of 10 digits',
+      })
+    }
+    else if(!(this.user.email.includes("@")))
+    {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Invalid Email',
+      })
+    }
+    else{
+      this.userService.update(this.user).subscribe(
       (response:any)=>{
         Swal.fire({
           title: 'Details Updated',
           text: `${response.name} details updated`
         })       
       }
-    )
+    )}
   }
   changeMode() : boolean{
    return this.display=!this.display;
