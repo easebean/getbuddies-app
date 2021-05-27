@@ -37,12 +37,12 @@ export class SignUpComponent implements OnInit {
       city: user.value.city
     }
 
+    //password,phone number and email validation
     var strongRegex = new RegExp("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*_-])(?=.{8,})");
     function emailIsValid(){
       return user.value.email.includes("@");
     }
 
-    
     if(user.value.password !== user.value.rePassword)
     {
       Swal.fire({
