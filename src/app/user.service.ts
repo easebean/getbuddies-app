@@ -33,7 +33,12 @@ export class UserService{
         return this.http.get<Room>(`${this.apiUrl}/user/room/${userId}/`)
     }
 
-    public allUsers():Observable<User[]>{
-        return this.http.get<User[]>(`${this.apiUrl}/user/all`)
+    public allUsers():Observable<User>{
+        return this.http.get<User>(`${this.apiUrl}/user/all`)
     }
+
+    public delete(userId:number):Observable<void>{
+        return this.http.delete<void>(`${this.apiUrl}/user/delete/${userId}`)
+    }
+
 }

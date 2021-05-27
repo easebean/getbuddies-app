@@ -23,7 +23,6 @@ const routes: Routes = [
   { path: 'profile/:userId', component: ProfileComponent},
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'chat', component: ChatsComponent},
   { path: 'chat/:roomId', component: ChatsComponent},
   { path: 'teams', component: DisplayTeamsComponent},
   { path: 'search', component: SearchTeamsComponent},
@@ -46,8 +45,8 @@ const routes: Routes = [
     DisplayTeamsComponent,
     Error404Component,
     CreateTeamComponent,
-    AdminComponent,
-    OrderByPipe
+    OrderByPipe,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

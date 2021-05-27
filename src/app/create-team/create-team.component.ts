@@ -19,7 +19,6 @@ export class CreateTeamComponent implements OnInit {
 
   onAdd(room: NgForm) {
     var f = room.value
-    console.log(f);
     
     if (this.app.loggedUser !== undefined) {
       if(new Date(f.endDate)>=new Date()){

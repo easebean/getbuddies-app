@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { AppComponent } from '../app.component';
 import { User } from '../user';
 import { UserService } from '../user.service';
@@ -33,19 +34,19 @@ export class ProfileComponent implements OnInit {
     this.userService.find(userIdFromRoute).subscribe(
       (response:any) => {
         this.user = response
-        console.log(this.user);
-        console.log(this.isLogged);
       }
     )
     } else{
       this.user = this.app.loggedUser
-      console.log(this.user);
     }
   }
   onUpdate(update: NgForm){
     this.userService.update(this.user).subscribe(
       (response:any)=>{
-        console.log(response);        
+        Swal.fire({
+          title: 'Details Updated',
+          text: `${response.name} details updated`
+        })       
       }
     )
   }
