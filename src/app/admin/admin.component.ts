@@ -1,4 +1,4 @@
-import {​ Component, OnInit }​ from '@angular/core';
+import {​ Component, OnInit, resolveForwardRef }​ from '@angular/core';
 import { User } from '../user';
 import { Router } from '@angular/router';
 import { AppComponent } from '../app.component';
@@ -23,6 +23,7 @@ export class AdminComponent implements OnInit {​
   
   users : User[];
   rooms : Room[];
+  room : Room;
 
   displayUsers : boolean = true;
   displayRooms : boolean = false;
@@ -73,16 +74,17 @@ export class AdminComponent implements OnInit {​
   //   )
   // }//end of deleteUser
 
-  // deleteRoom()
-  // {
-  //   this.userService.delete().subscribe(
-  //     (response : User[]) => {
-  //       this.users = response;
-  //     },
-  //     (error: HttpErrorResponse) => {
-  //       alert(error.message);
-  //     }
-  //   )
-  // }//end of deleteRoom
+  deleteRoom(roomId : number)
+  {
+    this.roomService.delete(roomId).subscribe(
+      (response : any) => {
+        console.log(response);
+        this.getAllRooms();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+  }//end of deleteRoom
 
 }​
