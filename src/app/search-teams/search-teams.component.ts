@@ -12,54 +12,58 @@ import { RoomService } from '../room.service';
   styleUrls: ['./search-teams.component.css']
 })
 export class SearchTeamsComponent implements OnInit {
-  key:string
-  rooms:Room[]
-  constructor(private roomService:RoomService,private app:AppComponent,private router: Router) { }
+  key: string
+  rooms: Room[]
+  constructor(private roomService: RoomService, private app: AppComponent, private router: Router) { }
 
   ngOnInit(): void {
   }
-  onSearch(){
+  onSearch() {
     this.roomService.findByName(this.key).subscribe(
-      (response:any) => {
+      (response: any) => {
         this.rooms = response
-        console.log(this.rooms);        
+        console.log(this.rooms);
       },
-      (error:HttpErrorResponse) =>{
+      (error: HttpErrorResponse) => {
         console.log(error.message);
       }
     )
   }
-  joinTeam(room:Room){
-    console.log(room.users.includes(this.app.loggedUser));
-    
-    if(room.users.includes(this.app.loggedUser)){
-      Swal.fire({
-        title: 'Already a member!',
-        text: 'You are already a member of this room. You can go to the chatroom',
-        icon: 'warning',
-        confirmButtonText: 'Go to Chat'
-      }).then(()=>{
-        this.router.navigate([`/chat/${room.id}`])
-      })
-    }
-    else if(this.app.loggedUser!==undefined)
-    this.roomService.addUser(room,this.app.loggedUser.userName).subscribe(
-      (response:any) => {
-        Swal.fire({
-          title: 'Successfully added',
-          text: `Successfully added to the ${response.name}`,
-          icon: 'success'
-        }).then(()=>{
-          this.router.navigate(['/chat',response.id])
-        })
+  joinTeam(room: Room) {
+    if (this.app.loggedUser !== undefined) {
+      var x = false
+      for (let u of room.users) {
+        if (u.id == this.app.loggedUser.id)
+          x = true
       }
-    )
-    else 
+      if (x) {
+        Swal.fire({
+          title: 'Already a member!',
+          text: 'You are already a member of this room. You can go to the chatroom',
+          icon: 'warning',
+          confirmButtonText: 'Go to Chat'
+        }).then(() => {
+          this.router.navigate([`/chat/${room.id}`])
+        })
+      } else
+        this.roomService.addUser(room, this.app.loggedUser.userName).subscribe(
+          (response: any) => {
+            Swal.fire({
+              title: 'Successfully added',
+              text: `Successfully added to the ${response.name}`,
+              icon: 'success'
+            }).then(() => {
+              this.router.navigate(['/chat', response.id])
+            })
+          }
+        )
+    }
+    else
       Swal.fire({
         title: 'Invalid access!',
         text: 'Please login/signup first',
         icon: 'warning'
-      }).then(()=>{
+      }).then(() => {
         this.router.navigate(['/login'])
       })
   }
